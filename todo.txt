@@ -1,0 +1,7 @@
+[] Impedir que o usuario não digite informações invalidas (não preenchimento)
+[] Manipular as informações recebidas e formatar textos
+    - Nome do banco com as iniciais maiusculas
+    - Nome do usuario com todas as letras maiusculas
+    - Usar [input type="date"] para adquirir mes e ano de validade
+    - Formatar o número do cartão com espaços a cada 4 digitos, no formulario e no cartão final
+[] Informar avisos caso algo não esteja de acordo

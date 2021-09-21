@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> APP </title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="cards">
+            <div id="noCard">
+                <h2>Adicione seu primeiro cartão.</h2>
+            </div>
+        </div>
+
+        <button id="showForm" onclick="showForm()"></button>
+
+        <div id="cardinfos">
+            <div id="form"> 
+                <div id="errors">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta error doloremque, laborum cum aperiam vero quasi ullam dolorum nam numquam? Cumque quibusdam porro odio eius quos suscipit tempora quisquam a.
+                </div>      
+            <h1>Adicionar novo cartão</h1>
+                <div class="card">
+                    <div>
+                        <h1><input type="text" name="BankName" id="bank-info"></h1>
+                    </div>
+                    <div>
+                        <h3>gold</h3>
+                        <img id="bandeira" src="./assets/images/icons/mastercard.png" alt="bandeira">
+                    </div>
+                    <div>
+                        <span id="cardNumber"><input type="text" name="Number" id="number-info"></span>
+                    </div>
+                    <div id="validade">
+                        Valido até: <span id="valid"><input type="text" name="mouth" id="mouth-value">/<input type="text" name="year" id="year-value"></span>
+                    </div>
+                    <div>
+                        <span id="user"><input type="text" name="UserName" id="user-info"></span>
+                    </div>
+                </div>
+                
+                <button id="addCard" onclick="createCard()">Adicionar cartão</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="./assets/scripts/main.js"></script>
+</body>
+
+</html>
