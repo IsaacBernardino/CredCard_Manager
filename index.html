@@ -13,41 +13,51 @@
     <div id="app">
 
         <div id="cards">
-            <div id="noCard">
-                <h2>Adicione seu primeiro cartão.</h2>
-            </div>
         </div>
 
-        <button id="showForm" onclick="showForm()"></button>
+        <button id="showForm"></button>
 
         <div id="cardinfos">
-            <div id="form"> 
+            <form id="form"> 
+
                 <div id="errors">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta error doloremque, laborum cum aperiam vero quasi ullam dolorum nam numquam? Cumque quibusdam porro odio eius quos suscipit tempora quisquam a.
-                </div>      
+                    <ul>
+                    <li>Nome do usuario invalido</li>
+                    <li>Numero do cartão invalido</li>
+                    <li>Verifique se a data de validade esta correta</li>
+                    <li>Adicione um nome para o banco</li>
+                    </ul>
+                </div>
+
             <h1>Adicionar novo cartão</h1>
-                <div class="card">
-                    <div>
-                        <h1><input type="text" name="BankName" id="bank-info"></h1>
-                    </div>
-                    <div>
-                        <h3>gold</h3>
-                        <img id="bandeira" src="./assets/images/icons/mastercard.png" alt="bandeira">
-                    </div>
-                    <div>
-                        <span id="cardNumber"><input type="text" name="Number" id="number-info"></span>
-                    </div>
-                    <div id="validade">
-                        Valido até: <span id="valid"><input type="text" name="mouth" id="mouth-value">/<input type="text" name="year" id="year-value"></span>
-                    </div>
-                    <div>
-                        <span id="user"><input type="text" name="UserName" id="user-info"></span>
-                    </div>
+
+                <div class="cardForm">
+                        <label for="bank-info">Nome do Banco:</label>
+                        <input type="text" name="BankName" id="bank-info">
+
+                        <div id="other">
+                            <!-- <img id="bandeira" src="./assets/images/icons/mastercard.png" alt="bandeira"> -->
+                            TODO | selecione a bandeira do cartão
+                        </div>
+
+                        <label for="number-info">Número do cartão:</label>
+                        <input type="text" name="Number" id="number-info">
+
+                        <div>
+                            Validade: 
+                            <label for="mouth-value">Mês:</label>
+                            <input type="text" name="mouth" id="mouth-value">
+
+                            <label for="moutn-value">Ano:</label>
+                            <input type="text" name="year" id="year-value">
+                        </div>
+                        <label for="user-info">Nome do proprietario:</label>
+                        <input type="text" name="UserName" id="user-info">
                 </div>
                 
-                <button id="addCard" onclick="createCard()">Adicionar cartão</button>
+                <button id="addCard">Adicionar cartão</button>
 
-            </div>
+            </form>
         </div>
     </div>
     <script src="./assets/scripts/main.js"></script>

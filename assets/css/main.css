@@ -20,6 +20,14 @@ body {
     transform: translateX(-50%);
 }
 
+#cards h2 {
+    text-align: center;
+    font-weight: 100;
+    font-size: 22px;
+    color: #fff;
+}
+
+
 /* Botão para adicionar */
 #showForm {
     position: relative;

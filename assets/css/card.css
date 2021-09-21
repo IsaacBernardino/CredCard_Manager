@@ -14,26 +14,6 @@
     transform: translateX(-50%);
 }
 
-#cards #noCard {
-    width: 300px;
-    height: 180px;
-    margin: 0 5px;
-    border: 3px solid white;
-    border-radius: 8px;
-    padding: 5px;
-    position: relative;
-    text-align: center;
-}
-
-#cards #noCard h2 {
-    position: relative;
-    top: 40%;
-    transform: translateY(-50%);
-    font-weight: 200;
-    font-size: 26px;
-    color: #fff;
-}
-
 .card {
     width: 300px;
     height: 180px;
@@ -114,7 +94,8 @@
 
     text-align: center;
 
-    transition: 85ms;
+    transition: 0.1s;
+    cursor: pointer;
 }.card button:hover {
 
     width: 100px;

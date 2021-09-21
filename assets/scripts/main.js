@@ -1,14 +1,58 @@
-const form = document.querySelector('#cardinfos');
+const cardinfos = document.querySelector('#cardinfos');
+const cardsArea = document.querySelector('#cards');
+const form = document.querySelector('#form');
 
 const removeBtn = document.querySelectorAll('#removeCard');
 const cardsUi = document.querySelectorAll('.card');
 
-let cardsSaved = [];
-let idCount = 0;
+let allCards = [];
 
-console.log(cardsSaved.length);
+window.addEventListener('load', () => {
+    App();
+});
 
-const createCard = () => {
+App = () => {
+    // Botão para mostrar formulario
+    document.querySelector('#showForm').addEventListener("click", () => {
+        console.log('btn -- Mostrar formulario');
+        
+        cardinfos.style.visibility = "visible";
+    });
+
+    // Botão para adicionar cartão
+    document.querySelector('#addCard').addEventListener("click", () => {
+        console.log('btn -- Adicionar Cartão');
+
+        renderCard()
+
+        cardinfos.style.visibility = "hidden";
+    });
+
+}
+
+// Impedir a pagina de recarregar quando um evento de 'eviar' for ativado
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+
+function tip (text) {
+    let tip = document.createElement('h2');
+    tip.innerText = text; //'Adicione um novo cartão';
+
+    return tip;
+}
+
+let text = '';
+
+if(allCards.length > 0) {
+    text = '';
+}else {
+    text = 'Adicione um novo cartão';
+}
+cardsArea.insertAdjacentElement("beforeend", tip(text));
+    
+const renderCard = () => {
+
     const cardsArea = document.querySelector('#cards')
     //inputs
     const userName= document.querySelector('#user-info');
@@ -25,7 +69,7 @@ const createCard = () => {
     cardDiv.innerHTML =
     `
         <h1 id="bankName">${bankName.value}</h1>
-        <h3>gold</h3>
+        <h3>!!!!</h3>
         <img id="bandeira" src="./assets/images/icons/mastercard.png" alt="bandeira">
         <span id="cardNumber">${cardNumber.value}</span>
 
@@ -44,14 +88,17 @@ const createCard = () => {
     cardsArea.appendChild(cardDiv);
     cardDiv.addEventListener("click", deleteCard);
 
-    form.style.visibility = "hidden";
-
     // zerar inputs
     userName.value = "";
     bankName.value = "";
     cardNumber.value = "";
     mouth.value = "";
     year.value = "";
+
+    allCards.push(cardDiv.className);
+    console.log(allCards);
+
+    console.log('renderCard -- Cartão adicionado');
 }
 
 function deleteCard(e) {
@@ -63,111 +110,9 @@ function deleteCard(e) {
     }
 }
 
-function removeCard() {
-    let clickedCard;
-
-    for(let i = 0; i < cardsSaved.length; i++){
-        clickedCard = document.querySelector(`#id${cardsSaved[i].cardId}`);
-        
-        clickedCard.remove()
-    }
-
-    console.log(clickedCard);
-
-    //cardsSaved.pop()
-}
-
-function removeTip() {
-    let tip = document.getElementById('noCard');
-    tip == null ? 0 : tip.remove();
-}
-
 function showForm(){
-    form.style.visibility = "visible";
-}
-
-
-
-function createCardFn() {
-
-    // remover a dica quando tiver cartoes e voltar a apresentar quando for excluido
-    removeTip();
-
-    let cardsArea = document.querySelector('#cards')
-
-    let userNameInput = document.querySelector('#user-info');
-    let bankNameInput = document.querySelector('#bank-info');
-    let cardNumberInput = document.querySelector('#number-info');
-    let mouthInput = document.querySelector('#mouth-value');
-    let yearInput = document.querySelector('#year-value');
-
-    let card = new Card();
-
-    card.cardId = idCount;
-    card.user = userNameInput.value || "Usuario";
-    card.bankName = bankNameInput.value || "Banco";
-    card.cardNumber = cardNumberInput.value || "XXXX XXXX XXXX XXXX";
-    card.mouth = mouthInput.value || "X0";
-    card.year = yearInput.value || "X0X0";
-
-    cardsSaved.push(card);
-    console.log(cardsSaved.length);
-
-    card.drawCard(cardsArea);
-    
-    form.style.visibility = "hidden";
-    showAllCards();
-
-    idCount++;
 }
 
 function showAllCards(){
     console.log(cardsSaved);
 }
-
-// var cardModel =
-//     `<div class="card">
-//         <div>
-//             <h1 id="bankName">Banco Inter</h1>
-//         </div>
-//         <div>
-//             <h3>gold</h3>
-//             <img id="bandeira" src="./assets/images/icons/mastercard.png" alt="bandeira">
-//         </div>
-//         <div>
-//             <span id="cardNumber">5117 xxxx xxxx xxxx</span>
-//         </div>
-//         <div id="validade">
-//             Valido até: <span id="valid">07/2023</span>
-//         </div>
-//         <div>
-//         <span id="user">Isaac B Costa</span>
-//         </div>
-//     </div>`
-
-/*
-        `<div id="id${this.cardId}">
-            <div class="card">
-                <div>
-                    <h1 id="bankName">${this.bankName}</h1>
-                </div>
-                <div>
-                    <h3>gold</h3>
-                    <img id="bandeira" src="./assets/images/icons/mastercard.png" alt="bandeira">
-                </div>
-                <div>
-                    <span id="cardNumber">${this.cardNumber}</span>
-                </div>
-                <div id="validade">
-                    Valido até: <span id="valid">${this.mouth}/${this.year}</span>
-                </div>
-                <div>
-                <span id="user">${this.user}</span>
-                </div>
-                <div>
-                <button class="removeCard">X</button>
-                </div>
-            </div>
-        </div>
-    `
-    */
