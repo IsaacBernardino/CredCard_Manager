@@ -5,8 +5,6 @@ const form = document.querySelector('#form');
 const removeBtn = document.querySelectorAll('#removeCard');
 const cardsUi = document.querySelectorAll('.card');
 
-let allCards = [];
-
 window.addEventListener('load', () => {
     App();
 });
@@ -34,22 +32,6 @@ App = () => {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 });
-
-function tip (text) {
-    let tip = document.createElement('h2');
-    tip.innerText = text; //'Adicione um novo cartão';
-
-    return tip;
-}
-
-let text = '';
-
-if(allCards.length > 0) {
-    text = '';
-}else {
-    text = 'Adicione um novo cartão';
-}
-cardsArea.insertAdjacentElement("beforeend", tip(text));
     
 const renderCard = () => {
 
@@ -95,10 +77,22 @@ const renderCard = () => {
     mouth.value = "";
     year.value = "";
 
-    allCards.push(cardDiv.className);
-    console.log(allCards);
-
     console.log('renderCard -- Cartão adicionado');
+}
+
+function tip (text) {
+    let tip = document.createElement('h2');
+    tip.id = 'dica';
+    tip.innerText = text; //'Adicione um novo cartão';
+
+    return tip;
+}
+let text = 'Adicione um novo cartão';
+cardsArea.insertAdjacentElement("beforeend", tip(text));
+
+removeTip = () => {
+    let tip = document.querySelector('#dica');
+    tip.remove();
 }
 
 function deleteCard(e) {
