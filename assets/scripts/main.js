@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
 
 App = () => {
     // Botão para mostrar formulario
-    document.querySelector('#showForm').addEventListener("click", () => {
+    document.querySelector('#add-button').addEventListener("click", () => {
         console.log('btn ==> Mostrar formulario');
         
         cardinfos.style.visibility = "visible";
@@ -77,6 +77,15 @@ const renderCard = () => {
         cardDiv.addEventListener("click", deleteCard);
         
         cardinfos.style.visibility = "hidden";
+        alertDiv.style.visibility = "hidden";
+        
+        // zerar inputs
+        userName.value = "";
+        bankName.value = "";
+        cardNumber.value = "";
+        mouth.value = "";
+        year.value = "";
+
         console.log('renderCard ==> Cartão adicionado');
 
     } else {
@@ -84,40 +93,21 @@ const renderCard = () => {
 
         let uiError;
         alerts.innerHTML = '';
+
         for(let e = 0; e < data[1].length; e++){
             uiError = document.createElement('li');
             uiError.textContent = data[1][e];
             alerts.appendChild(uiError);
             console.log(data[1][e]);
         }
-
-        console.log(`Erros: ${
-            data[1]
-        }`);
-        
-
-        /*
-                            <li>Nome do usuario invalido</li>
-                    <li>Numero do cartão invalido</li>
-                    <li>Verifique se a data de validade esta correta</li>
-                    <li>Adicione um nome para o banco</li>
-        */
     }
+
     // Botão de remoção do cartão
     // CRIAR FUNÇÂO SEPARADA
     const removeButton = document.createElement('button');
     removeButton.classList.add('removeCard');
     removeButton.insertAdjacentHTML('beforeend', 'Remover');
-    cardDiv.appendChild(removeButton);
-
-    // zerar inputs
-    userName.value = "";
-    bankName.value = "";
-    cardNumber.value = "";
-    mouth.value = "";
-    year.value = "";
-
-    
+    cardDiv.appendChild(removeButton); 
 }
 // userName, bankName, cardNumber, mouth, year
 function ValidateInputs(u_n, b_n, c_n, m, y){

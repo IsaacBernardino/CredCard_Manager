@@ -11,11 +11,27 @@
 
 <body>
     <div id="app">
+        <div class="top-header">
+            <h1>CredCard Manager</h1>
+        </div>
+        <div class="bottom-bar">
+            <button id="cards-btn">
+                <i class="gg-credit-card"></i>
+                Cartoes
+            </button>
+            <button id="about">
+                <i class="gg-more-o"></i>
+                Sobre
+            </button>
+        </div>
 
         <div id="cards">
         </div>
 
-        <button id="showForm"></button>
+        <div id='add-button'>
+            <i class="gg-add"></i>
+            <span>Novo Cartão</span>
+        </div>
 
         <div id="cardinfos">
             <form id="form"> 
@@ -52,9 +68,8 @@
                         <label for="user-info">Nome do proprietario:</label>
                         <input type="text" name="UserName" id="user-info">
                 </div>
-                
-                <button id="addCard">Adicionar cartão</button>
-
+                    <button id="addCard">Adicionar cartão</button>
+                    <button id="cancel">Cancelar</button>
             </form>
         </div>
     </div>
