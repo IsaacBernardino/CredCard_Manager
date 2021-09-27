@@ -21,11 +21,7 @@
             <form id="form"> 
 
                 <div id="errors">
-                    <ul>
-                    <li>Nome do usuario invalido</li>
-                    <li>Numero do cartão invalido</li>
-                    <li>Verifique se a data de validade esta correta</li>
-                    <li>Adicione um nome para o banco</li>
+                    <ul id='err'>
                     </ul>
                 </div>
 
@@ -38,6 +34,8 @@
                         <div id="other">
                             <!-- <img id="bandeira" src="./assets/images/icons/mastercard.png" alt="bandeira"> -->
                             TODO | selecione a bandeira do cartão
+                            <label for="color">Cor do cartão</label>
+                            <input type="color" name="colors" id="color">
                         </div>
 
                         <label for="number-info">Número do cartão:</label>

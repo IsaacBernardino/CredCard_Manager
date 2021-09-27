@@ -26,8 +26,7 @@ git merge <nome da branch> //adiciona as modificações de uma branch para a mas
 git branch -D <nome da branch> // deleta uma branch
 
 // Adicionando o projeto ao github
-git remote -v // para checaros repositorios remotos
+git remote -v // para checar os repositorios remotos
 git remote add origin https://github.com/IsaacBernardino/CredCard_Manager.git
-git push -u origin main
-
+git push -u origin master // Atualizar modificaçoes no github
 --
