@@ -1,48 +1,37 @@
+/* Moderm Round8 UI v1.0 */
+
 .card {
-    width: 300px;
-    height: 180px;
-    margin: 0 5px;
-    border: 3px solid white;
-    border-radius: 8px;
+    background-color: #223344;
+    width: 90%;
+    height: 225px;
+
+    margin: 6px 0;
     padding: 5px;
+
+    border-radius: 10px;
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    text-align: left;
+
+    box-shadow: -2px 3px 8px #001122;
 }
 
 .card h1 {
-    width: 98%;
+    width: 100%;
 
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    font-size: 30px;
-    color: #ffffff;
-    text-align: center;
-}
-
-.card h3 {
-    top: -10px;
-    right: 5px;
-    position: absolute;
-    font-size: 15px;
-    color: #ffffff;
-}
-
-.card #bandeira {
-    top: -12px;
-    right: -3px;
-    width: 64px;
-    height: 64px;
-    position: absolute;
-    font-size: 13px;
-    color: #ffffff;
+    font-size: 24pt;
+    font-weight: 400;
+    color: #eee;
+    text-align: right;
 }
 
 .card #cardNumber {
-    top: 50%;
-    left: 10px;
-    position: absolute;
+    width: 100%;
     font-size: 22px;
     color: #ffffff;
 
@@ -50,55 +39,53 @@
 }
 
 .card #validade {
-    top: 65%;
-    left: 10px;
-    width: 200px;
-    position: absolute;
+    width: 100%;
     font-size: 15px;
     color: #ffffff;
 }
 
 .card #user {
-    bottom: 10px;
-    left: 10px;
-    width: 98%;
-    position: absolute;
+    width: 100%;
     font-size: 16px;
     color: #ffffff;
 }
 
 /* Botão de remover */
 .card button {
-    color: red;
-    background-color: white;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    
     padding: 3px 5px;
 
-    border-radius: 14px;
-
-    width: 21px;
-    height: 21px;
-    font-size: 0;
-
-    border-radius: 24px;
-    border: none;
-
-    text-align: center;
-
-    transition: 0.1s;
-    cursor: pointer;
-}.card button:hover {
-
-    width: 100px;
+    background-color: #eee;
+    width: 75px;
     height: 24px;
 
+    color: rgb(230, 15, 40);;
+    font-size: 12px;
+    font-weight: 100;
+    text-align: center;
 
-    font-size: 13px;
+    border-radius: 0 8px 0 8px;
+    border: none;
+
+    transition: 0.125s;
+    cursor: pointer;
+}.card button:hover {
+    width: 90px;
+    border-radius: 50px 24px 0 50px;
+    background-color:rgb(230, 15, 40);
+
+    font-size: 12px;
     font-weight: 600;
+    color: #eee;
 
-    color: white;
-    background-color:rgba(255, 0, 0, 0.7);
 }.card button:active {
-
-    color: white;
-    background-color:rgb(255, 35, 37);
+    background-color:rgb(255, 100, 100);
 }
+
+/*
+TODO
+Formatar o cartão para telas grandes
+*/

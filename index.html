@@ -11,13 +11,15 @@
 
 <body>
     <div id="app">
+
         <div class="top-header">
             <h1>CredCard Manager</h1>
         </div>
+
         <div class="bottom-bar">
             <button id="cards-btn">
                 <i class="gg-credit-card"></i>
-                Cartoes
+                Cartões
             </button>
             <button id="about">
                 <i class="gg-more-o"></i>
@@ -26,6 +28,7 @@
         </div>
 
         <div id="cards">
+            <img src="./assets/images/noCard.png">
         </div>
 
         <div id='add-button'>
@@ -33,26 +36,23 @@
             <span>Novo Cartão</span>
         </div>
 
+
+        <!-- Form -->
         <div id="cardinfos">
             <form id="form"> 
 
                 <div id="errors">
                     <ul id='err'>
                     </ul>
+                    <button onclick="errorOkButton()">OK</button>
                 </div>
 
-            <h1>Adicionar novo cartão</h1>
-
                 <div class="cardForm">
+                                
+                        <h1>Adicionar novo cartão</h1>
+
                         <label for="bank-info">Nome do Banco:</label>
                         <input type="text" name="BankName" id="bank-info">
-
-                        <div id="other">
-                            <!-- <img id="bandeira" src="./assets/images/icons/mastercard.png" alt="bandeira"> -->
-                            TODO | selecione a bandeira do cartão
-                            <label for="color">Cor do cartão</label>
-                            <input type="color" name="colors" id="color">
-                        </div>
 
                         <label for="number-info">Número do cartão:</label>
                         <input type="text" name="Number" id="number-info">
@@ -68,8 +68,12 @@
                         <label for="user-info">Nome do proprietario:</label>
                         <input type="text" name="UserName" id="user-info">
                 </div>
+
+                <div id="buttons">
                     <button id="addCard">Adicionar cartão</button>
-                    <button id="cancel">Cancelar</button>
+                    <button onclick="cancel()">Cancelar</button>
+                </div>
+                
             </form>
         </div>
     </div>

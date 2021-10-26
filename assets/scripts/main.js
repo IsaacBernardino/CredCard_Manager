@@ -1,12 +1,16 @@
+// FORM html elements
 const cardinfos = document.querySelector('#cardinfos');
-const cardsArea = document.querySelector('#cards');
 const form = document.querySelector('#form');
-
-const removeBtn = document.querySelectorAll('#removeCard');
-const cardsUi = document.querySelectorAll('.card');
+//Cards
+const cardsArea = document.querySelector('#cards');
+const removeBtn = document.querySelectorAll('#removeCard'); //Button to remove card
+const cardsUi = document.querySelectorAll('.card'); // card element on 'cardsArea'
 
 const alertDiv = document.querySelector('#errors')
 const alerts = document.querySelector('#err');
+
+let id_f = 0;
+const cardsId = [];
 
 window.addEventListener('load', () => {
     App();
@@ -34,10 +38,7 @@ form.addEventListener('submit', (e) => {
 });
     
 const renderCard = () => {
-
-
-    
-     // Area aonde os cartões serão anexados
+    // Area aonde os cartões serão anexados
     const cardsArea = document.querySelector('#cards')
 
     // elementos de input
@@ -47,15 +48,12 @@ const renderCard = () => {
     const mouth = document.querySelector('#mouth-value');
     const year = document.querySelector('#year-value');
 
-    const color = document.querySelector('#color');
-
     // retorno para uma variavel dos dados inseridos e validados
     const data = ValidateInputs(userName, bankName, cardNumber, mouth, year);
 
     // Cria o elemento inicial para o cartão
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
-    cardDiv.style.background = color.value;
 
     // verificação dos dados
 
@@ -63,7 +61,6 @@ const renderCard = () => {
         cardDiv.innerHTML =
         `
             <h1 id="bankName">${data[0].bankName}</h1>
-            <img id="bandeira" src="./assets/images/icons/mastercard.png" alt="bandeira">
             <span id="cardNumber">${data[0].cardNumber}</span>
     
             <div id="validade">
@@ -85,6 +82,8 @@ const renderCard = () => {
         cardNumber.value = "";
         mouth.value = "";
         year.value = "";
+
+        cardsId.push(generateId())
 
         console.log('renderCard ==> Cartão adicionado');
 
@@ -109,6 +108,21 @@ const renderCard = () => {
     removeButton.insertAdjacentHTML('beforeend', 'Remover');
     cardDiv.appendChild(removeButton); 
 }
+
+function generateId() {
+    id_f++;
+    return `card + ${id_f}`;
+}
+
+function errorOkButton () {
+    alertDiv.style.visibility = "hidden";
+}
+
+function cancel () {
+    cardinfos.style.visibility = "hidden";
+    alertDiv.style.visibility = "hidden";
+}
+
 // userName, bankName, cardNumber, mouth, year
 function ValidateInputs(u_n, b_n, c_n, m, y){
     let data = {
@@ -137,8 +151,7 @@ function ValidateInputs(u_n, b_n, c_n, m, y){
         data.bankName = capitalize(b_n.value);
     }
     
-    // Numero do cartão = 16 digitos
-    // exemplo 555555555555 ==> 5555 5555 5555 5555 
+    // Numero do cartão Exemplo 555555555555 ==> 5555 5555 5555 5555 
     if(c_n.value == ""){
         data.erro = true;
         errors.push('Numero do cartão invalido.');
@@ -194,7 +207,7 @@ function capitalize(word) {
 
   }
 
-  // Formatar numero do cartão
+  // Formatar numero do cartão com regex
   function mcc(v){
     v = v.replace(/\D/g,"");
     v = v.replace(/^(\d{4})(\d)/g,"$1 $2");
@@ -210,9 +223,6 @@ function deleteCard(e) {
         const card = item.parentElement;
         card.remove();
     }
-}
-
-function showForm(){
 }
 
 function showAllCards(){
