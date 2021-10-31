@@ -1,15 +1,15 @@
-[] Impedir que o usuario não digite informações invalidas (não preenchimento)
-[] Manipular as informações recebidas e formatar textos
+[x] Impedir que o usuario digite informações invalidas (não preenchimento)
+[x] Manipular as informações recebidas e formatar textos
     - Nome do banco com as iniciais maiusculas
     - Nome do usuario com todas as letras maiusculas
     - validar a data de validade
     - Formatar o número do cartão com espaços a cada 4 digitos, no formulario e no cartão final
-[] Informar avisos caso algo não esteja de acordo
+[x] Informar avisos caso algo não esteja de acordo
 
 ------- git commands
 
 personal access token
-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
+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
 
 git init // inicia a linha do tempo
 git add <file> // adiciona ou atualiza arquivos para a linha do tempo

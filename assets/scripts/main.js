@@ -165,7 +165,7 @@ function ValidateInputs(u_n, b_n, c_n, m, y){
     }
 
     // mes e ano
-    if(m.value == "" || y.value == ""){
+    if((m.value == "" || parseInt(m.value,10) > 12 )|| y.value == ""){
         data.erro = true;
         errors.push('Data invalida');
     } else {
