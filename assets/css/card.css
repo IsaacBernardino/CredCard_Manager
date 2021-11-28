@@ -1,31 +1,31 @@
 /* Moderm Round8 UI v1.0 */
 
 .card {
-    background-color: #223344;
-    width: 90%;
-    height: 225px;
+    background: linear-gradient(#000000da, #aa0000dd);
+    width: 300px;
+    height: 200px;
 
-    margin: 6px 0;
-    padding: 5px;
+    padding: 5px 10px;
 
     border-radius: 10px;
     position: relative;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: flex-end;
 
     text-align: left;
 
-    box-shadow: -2px 3px 8px #001122;
+    box-shadow: 5px 5px 10px #56000096;
+
+    margin: 5px;
 }
 
 .card h1 {
     width: 100%;
 
-    font-size: 24pt;
-    font-weight: 400;
+    font-size: 16pt;
+    font-weight: 600;
     color: #eee;
     text-align: right;
 }
@@ -62,9 +62,10 @@
     width: 75px;
     height: 24px;
 
-    color: rgb(230, 15, 40);;
-    font-size: 12px;
-    font-weight: 100;
+    color: #e60f28;
+    font-family: Poppins;
+    font-size: 10pt;
+    font-weight: 400;
     text-align: center;
 
     border-radius: 0 8px 0 8px;
@@ -75,17 +76,11 @@
 }.card button:hover {
     width: 80px;
     border-radius: 0 8px 0 8px;
-    background-color:rgb(230, 15, 40);
+    background-color:#e60f28;
 
-    font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
     color: #eee;
 
 }.card button:active {
-    background-color:rgb(255, 100, 100);
+    background-color:#ff6464;
 }
-
-/*
-TODO
-Formatar o cartão para telas grandes
-*/

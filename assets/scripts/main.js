@@ -44,9 +44,16 @@ const renderCard = () => {
     // elementos de input
     const userName = document.querySelector('#user-info');
     const bankName = document.querySelector('#bank-info');
-    const cardNumber = document.querySelector('#number-info');
     const mouth = document.querySelector('#mouth-value');
     const year = document.querySelector('#year-value');
+
+    // Numero do cartão
+    const cardNumber1 = document.querySelector('#number-info-1');
+    const cardNumber2 = document.querySelector('#number-info-2');
+    const cardNumber3 = document.querySelector('#number-info-3');
+    const cardNumber4 = document.querySelector('#number-info-4');
+
+    const cardNumber = cardNumber1.value + ' ' + cardNumber2.value + ' ' + cardNumber3.value + ' ' + cardNumber4.value
 
     // retorno para uma variavel dos dados inseridos e validados
     const data = ValidateInputs(userName, bankName, cardNumber, mouth, year);
@@ -77,11 +84,15 @@ const renderCard = () => {
         alertDiv.style.visibility = "hidden";
         
         // zerar inputs
-        userName.value = "";
-        bankName.value = "";
-        cardNumber.value = "";
-        mouth.value = "";
-        year.value = "";
+        userName.value  = '';
+        bankName.value  = ''; 
+        mouth.value     = '';
+        year.value      = '';
+
+        cardNumber1.value = '';
+        cardNumber2.value = '';
+        cardNumber3.value = '';
+        cardNumber4.value = '';
 
         cardsId.push(generateId())
 
@@ -97,7 +108,6 @@ const renderCard = () => {
             uiError = document.createElement('li');
             uiError.textContent = data[1][e];
             alerts.appendChild(uiError);
-            console.log(data[1][e]);
         }
     }
 
@@ -125,6 +135,7 @@ function cancel () {
 
 // userName, bankName, cardNumber, mouth, year
 function ValidateInputs(u_n, b_n, c_n, m, y){
+    console.log('133', c_n)
     let data = {
         userName: "",
         bankName: "",
@@ -152,15 +163,16 @@ function ValidateInputs(u_n, b_n, c_n, m, y){
     }
     
     // Numero do cartão Exemplo 555555555555 ==> 5555 5555 5555 5555 
-    if(c_n.value == ""){
+    if(c_n == undefined){
         data.erro = true;
         errors.push('Numero do cartão invalido.');
     } else {
-        if (mcc(c_n.value).length < 19){
+        console.log(c_n.length)
+        if (c_n.length < 19){
             data.erro = true;
             errors.push('Numero do cartão invalido.');
         } else {
-            data.cardNumber = mcc(c_n.value);
+            data.cardNumber = c_n;
         }
     }
 
@@ -206,15 +218,6 @@ function capitalize(word) {
     return final_.join(' ');
 
   }
-
-  // Formatar numero do cartão com regex
-  function mcc(v){
-    v = v.replace(/\D/g,"");
-    v = v.replace(/^(\d{4})(\d)/g,"$1 $2");
-    v = v.replace(/^(\d{4})\s(\d{4})(\d)/g,"$1 $2 $3");
-    v = v.replace(/^(\d{4})\s(\d{4})\s(\d{4})(\d)/g,"$1 $2 $3 $4");
-    return v;
-}
 
 function deleteCard(e) {
     const item = e.target;

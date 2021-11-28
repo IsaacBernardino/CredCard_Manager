@@ -4,18 +4,26 @@
 
     background-color: #000;
     width: 100%;
-    height: calc(100vh);
+    height: 100vh;
 
     top: 0;
     z-index: 5;
 
-    color: #fff;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
 #form {
     position: relative;
-    padding: 5px 5px;
+    background-color: #fff;
+    color: #000;
+
+    width: 330px;
+    height: 650px;
+
+    padding: 3px 10px;
+
+    border-radius: 10px;
 
     display: flex;
     flex-wrap: wrap;
@@ -27,19 +35,19 @@
 }
 
 #form #buttons {
-    width: 400px;
-    
+    width: 100%; 
 }
+
 #form #buttons button {
     border-radius: 50px;
     border: 0;
 
     width: 100%;
-    height: 40px;
+    height: 45px;
 
-    margin: 3px;
+    margin: 3px 0;
 
-    font-size: 12pt;
+    font-size: 14pt;
 
     background-color: #778899;
     color: #fff;
@@ -48,47 +56,43 @@
 }
 
 label {
-    color: #fff;
     font-size: 16px;
 }
 
 .cardForm {
-    width: 400px;
+    width: 100%;
 }
 
-.cardForm #bandeira {
-    height: 64px;
-    font-size: 13px;
-    color: #ffffff;
+.card_number_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card_number_container input {
+    width: 65px !important;
 }
 
 .cardForm input {
     border-radius: 50px;
     border: 0;
-
-    width: 98%;
-    height: 35px;
-
-    font-size: 12pt;
-
-    background-color: #444466;
-    color: #fff;
-
-    border: 2px solid #ffffff75;
+    width: 100%;
+    height: 45px;
+    background-color: #456;
 
     margin-bottom: 10px;
 
+    font-size: 14pt;
+    color: #fff;
+    text-align: center;
 }
 
 .cardForm #mouth-value, #year-value {
-    background-color: #444466;
-    height: 40px;
-    width: 40px;
-
-    margin: 5px 15px 5px 0;
+    background-color: #456;
+    width: 65px;
+    height: 45px;
 
     border: 1px solid #eee;
-    border-radius: 40px;
 }
 
 #errors {
@@ -102,7 +106,7 @@ label {
     flex-direction: column;
     align-items: center;
     
-    background-color: #eee;
+    background-color: #567;
     width: 300px;
     min-height: 200px;
 
@@ -110,9 +114,10 @@ label {
     margin: 5px;
 
     border-radius: 5px;
+    border: 2px solid red;
 
-    font-size: 14px;
-    color: #000;
+    font-size: 10pt;
+    color: #fff;
 } #errors::before{
     color: red;
     content: '!';
