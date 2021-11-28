@@ -4,8 +4,8 @@
 ## HTML e CSS para estilização
 <h2> Capturas </h2>
 <div>
-  <img style="aspect-ratio: 1; width: 130px;" src="./capturas/captura2.png">
-  <img style="aspect-ratio: 1; width: 130px;" src="./capturas/captura.png">
+  <img style="aspect-ratio: 1; width: 150px;" src="./capturas/captura2.png">
+  <img style="aspect-ratio: 1; width: 150px;" src="./capturas/captura.png">
 </div>
 
 ## Futuras adições
